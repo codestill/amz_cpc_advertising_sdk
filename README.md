@@ -5,7 +5,7 @@ python amazon cpc advertising api sdk
 1. 修改 ad_account.py中的信息为你自己的开发者账号
 2. 获取授权
 1）获取授权url
- from auth import BaseAuth
+ >from auth import BaseAuth
  ba = BaseAuth()
  print ba.get_grant_url()
 2) 获取code

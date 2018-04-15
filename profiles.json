@@ -1,0 +1,49 @@
+#coding: utf-8
+
+# profiles
+{
+    "title": "Profile",
+    "type": "object",
+    "properties": {
+        "profileId": {
+            "description": "The ID of the profile",
+            "type": "number"
+        },
+        "countryCode": {
+            "description": "The country code identifying the publisher(s) on which ads will run",
+            "type": "string",
+            "oneOf": [
+                "US"
+            ]
+        },
+        "currencyCode": {
+            "description": "The currency used for all monetary values for entities under this profile",
+            "type": "string",
+            "oneOf": [
+                "USD"
+            ]
+        },
+        "dailyBudget": {
+            "description": "The optional budget shared by all entities created under this profile",
+            "type": "number",
+            "minimum": 1
+        },
+        "timeZone": {
+            "description": "The tz database time zone used for all date-based campaign management and reporting.",
+            "type": "string"
+        },
+        "accountInfo": {
+            "type": "object",
+            "properties": {
+                "marketplaceStringId": {
+                    "description": "The string identifier for the marketplace associated with this profile. This is the same identifier used by MWS",
+                    "type": "string"
+                },
+                "sellerStringId": {
+                    "description": "The string identifier for the seller associated with this profile. This is the same identifier used by MWS",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

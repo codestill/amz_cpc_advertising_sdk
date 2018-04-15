@@ -1,0 +1,59 @@
+#coding: utf-8- *
+
+#campaings
+
+{
+    "title": "Campaign",
+    "type": "object",
+    "properties": {
+        "campaignId": {
+            "description": "The ID of the campaign",
+            "type": "number"
+        },
+        "name": {
+            "description": "The name of the campaign",
+            "type": "string"
+        },
+        "campaignType": {
+            "description": "Specifies the advertising product managed by this campaign",
+            "type": "string",
+            "oneOf": [
+                "sponsoredProducts"
+            ]
+        },
+        "targetingType": {
+            "description": "Differentiates between a keyword-targeted and automatically targeted campaign",
+            "type": "string",
+            "oneOf": [
+                "manual",
+                "auto"
+            ]
+        },
+        "state": {
+            "description": "Advertiser-specified state of the campaign",
+            "type": "string",
+            "oneOf": [
+                "enabled",
+                "paused",
+                "archived"
+            ]
+        },
+        "dailyBudget": {
+            "description": "Daily budget for the campaign in dollars",
+            "type": "number",
+            "minimum": 1.00,
+        },
+        "startDate": {
+            "description": "The date the campaign will go or went live as YYYYMMDD",
+            "type": "string"
+        },
+        "endDate": {
+            "description": "The optional date the campaign will stop running as YYYYMMDD",
+            "type": "string"
+        },
+        "premiumBidAdjustment": {
+            "description": "When enabled, Amazon will increase the default bid for your ads thatare eligible to appear in this placement.See developer notes for more information.",
+            "type": "boolean"
+        }
+    }
+}

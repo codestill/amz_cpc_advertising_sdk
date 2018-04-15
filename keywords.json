@@ -1,0 +1,69 @@
+{u'adGroupId': 140640489162032, u'campaignId': 164121332960233, u'servingStatus': u'PENDING_START_DATE', u'state': u'enabled', u'keywordId': 240765401281571, u'lastUpdatedDate': 1515556925000, u'keywordText': u'(_targeting_auto_)', u'matchType': u'broad', u'creationDate': 1515556925000
+}
+
+
+{
+    "title": "KeywordEx",
+    "type": "object",
+    "properties": {
+        "keywordId": {
+            "description": "The ID of the keyword",
+            "type": "number"
+        },
+        "campaignId": {
+            "description": "The ID of the campaign to which this keyword belongs",
+            "type": "number"
+        },
+        "adGroupId": {
+            "description": "The ID of the ad group to which this keyword belongs. ",
+            "type": "number"
+        },
+        "state": {
+            "description": "Advertiser-specified state of the keyword",
+            "type": "string",
+            "oneOf": [
+                "enabled",
+                "paused",
+                "archived"
+            ]
+        },“keywordText: {
+            "description": "The expression to match against search queries",
+            "type": "string",
+        },
+        "matchType": {
+            "description": "The match type used to match the keyword to search query",
+            "type": "string",
+            "oneOf": [
+                "exact",
+                "phrase",
+                "broad"
+            ]
+        },
+        "bid": {
+            "description": "Bid used when ads are sourced using this keyword",
+            "type": "number",
+            "minimum": 0.02,
+        },
+        "creationDate": {
+            "description": "The date the ad group was created as epoch time in seconds",
+            "type": "number"
+        },
+        "lastUpdatedDate": {
+            "description": "The date the ad group was last updated as epoch time in seconds",
+            "type": "number"
+        },
+        "servingStatus": {
+            "description": "The computed status, accounting for out of budget, policy violations, etc. See developer notes for more information.",
+            "type": "string",
+            "oneOf": [
+                "archived",
+                "paused",
+                "active",
+                "suspended",
+                "campaignOutOfBudget",
+                "adGroupPaused", adGroupArchived, campaignPaused, campaignArchived,
+                "advertiserOutOfBudget"
+            ]
+        }
+    }
+}

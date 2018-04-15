@@ -1,0 +1,38 @@
+
+# adgroups
+
+{
+    "title": "AdGroup",
+    "type": "object",
+    "properties": {
+        "adGroupId": {
+            "description": "The ID of the ad group",
+            "type": "number"
+        },
+        "name": {
+            "description": "The name of the ad group",
+            "type": "string"
+        },
+        "campaignId": {
+            "description": "The ID of the campaign to which this ad group belongs",
+            "type": "number"
+        },
+        "defaultBid": {
+            "description": "The bid used when keywords belonging to this ad group don’t specify a bid",
+            "type": "number",
+            "minimum": 0.02,
+        },
+        "state": {
+            "description": "Advertiser-specified state of the ad group",
+            "type": "string",
+            "oneOf": [
+                "enabled",
+                "paused",
+                "archived"
+            ]
+        }
+    }
+}
+
+
+[{u'adGroupId': 93878453075483, u'name': u'#2The name of the ad group', u'campaignId': 164121332960233, u'defaultBid': 0.6, u'servingStatus': u'PENDING_START_DATE', u'state': u'enabled', u'lastUpdatedDate': 1515561584000, u'creationDate': 1515561544000}]

@@ -53,15 +53,3 @@ class MainBaseApi(BaseApi):
         self.headers['Amazon-Advertising-API-Scope'] = self.profile_id
 
 
-
-token = 'xxxxx' #替换成具体的token
-profile_id = 00000 #替换成具体的profile_id
-headers = {
-     'Content-Type': 'application/json',
-     'Authorization': 'Bearer {}'.format(self.access_token),
-     'Amazon-Advertising-API-Scope': profile_id
-}
-
-base_url = 'https://advertising-api.amazon.com'
-campaigns_path = '{}/campaigns'.format(base_url)
-ret = requests.get(campaigns_path, headers=headers)
